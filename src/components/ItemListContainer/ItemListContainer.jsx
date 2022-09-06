@@ -6,4 +6,4 @@ const ItemListContainer = (props) => {
   );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
