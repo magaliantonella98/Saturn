@@ -1,8 +1,12 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+  const onAdd = (count) => {
+    alert("Seleccionaste " + count +" items");
+  }
   return (
-    <p>{props.mensaje}</p>
+    <ItemCount stock ={10} initial={1} onAdd={onAdd}/>
   );
 }
 

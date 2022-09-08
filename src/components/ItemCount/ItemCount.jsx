@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
-const ItemCount = () => {
-    const [count, setCount] = useState(1);
-
-    const stock = 10;
+const ItemCount = ({stock, initial, onAdd}) => {
+    const [count, setCount] = useState(initial);
 
     const increment = () => {
         setCount(count + 1);
@@ -19,9 +17,6 @@ const ItemCount = () => {
         console.log("SE ACTUALIZO EL CONTADOR");
     }, [count]) 
 
-    const onAdd = () => {
-        alert("Seleccionaste " + count +" items");
-    }
 
     return (
         <div style={{
