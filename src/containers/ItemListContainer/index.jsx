@@ -1,32 +1,28 @@
-//import {useEffect, useState} from 'react'
-import ItemCount from '../../components/ItemCount/index';
-//import customFetch from '../utils/customFetch'
+import {useEffect, useState} from 'react'
+import ItemList from '../../components/ItemList';
+//import ItemCount from '../../components/ItemCount/index';
+import customFetch from '../../components/utils/promesa';
 
-
-//const dataFromBD = [];
 
 const ItemListContainer = () => {
-  /*const [data, setData] = useState ([]);
+  const [datos, setDatos] = useState ([]);
 
   useEffect(() =>{
-    customFetch(2000, dataFromBD)
-      .then(datos => setData(dataFromBD));
+    customFetch()
+      .then(resolve => setDatos(resolve))
+      .catch(err=> console.log.log(err))
   }, []);
   return(
-    <>
-    </>
-  );*/
+    <ItemList items={datos}/>
+  );
   
- const onAdd = (count) => {
+ /*const onAdd = (count) => {
     alert("Seleccionaste " + count +" items");
   }
   return (
-    <>
     <ItemCount stock ={10} initial={1} onAdd={onAdd}/>
-    <ItemCount stock ={5} initial={1} onAdd={onAdd}/>
-    </>
     
-  );
+  );*/
 }
 
 export default ItemListContainer;
