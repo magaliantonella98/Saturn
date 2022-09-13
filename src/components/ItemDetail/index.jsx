@@ -13,7 +13,10 @@ const ItemDetail = ({items}) => {
             <img className='card-img-top' src={items.pictureUrl} alt=""/> 
             <div className="card-body">
                 <h5 className='card-title'>{items.title}</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Consequatur velit explicabo, laborum rem porro, praesentium exercitationem perspiciatis 
+                autem earum, corporis ratione veritatis maiores iusto repudiandae. Animi sapiente 
+                voluptatibus neque tenetur?</p>
                 <h5 className='card-text'>${items.price}</h5>
                 <p className='card-text'>Unidades en stock: {items.stock}</p>
             </div>
