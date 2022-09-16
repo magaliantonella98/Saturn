@@ -24,11 +24,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 }}>
                 <button className="btn btn-outline-secondary" onClick={decrement}>-</button>
                 <p style={{margin:'1rem'}}>{count}</p>
-<<<<<<< HEAD:src/components/ItemCount/index.jsx
                 <button className="btn btn-outline-secondary" onClick={increment}>+</button>
-=======
-                <button className="btn btn-outline-secondary" onClick={increment}>Sumar</button>
->>>>>>> 89a18988d4e3b86f3b0e2818631d5931eed63fe9:src/components/ItemCount/ItemCount.jsx
             <button className="btn btn-outline-secondary" onClick={()=>onAdd(count)}>Add</button>
         </div>
 

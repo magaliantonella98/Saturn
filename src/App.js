@@ -1,23 +1,20 @@
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-<<<<<<< HEAD
 import ItemDetailContainer from './containers/ItemDetailContainer/index'
-//import ItemListContainer from './containers/ItemListContainer/index';
-=======
 import ItemListContainer from './containers/ItemListContainer/index';
->>>>>>> 89a18988d4e3b86f3b0e2818631d5931eed63fe9
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <NavBar/>
-<<<<<<< HEAD
-      {/*<ItemListContainer mensaje='BIENVENIDOS'/>*/}
-      <ItemDetailContainer/>
-=======
-      <ItemListContainer mensaje='BIENVENIDOS'/>
->>>>>>> 89a18988d4e3b86f3b0e2818631d5931eed63fe9
-    </div>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/category/:idCategory' element={<ItemListContainer/>}/>
+        <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
+        <Route path='*' element={<p>Oops :c</p>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,38 +1,29 @@
-<<<<<<< HEAD
 import {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from '../../components/ItemList';
 import products from '../../components/utils/datos';
-=======
-import {useEffect, useState} from 'react'
-import ItemList from '../../components/ItemList';
->>>>>>> 89a18988d4e3b86f3b0e2818631d5931eed63fe9
-//import ItemCount from '../../components/ItemCount/index';
 import customFetch from '../../components/utils/promesa';
 
 
 const ItemListContainer = () => {
   const [datos, setDatos] = useState ([]);
+  const {idCategory} = useParams();
 
-  useEffect(() =>{
-<<<<<<< HEAD
-    customFetch(2000, products)
-=======
-    customFetch()
->>>>>>> 89a18988d4e3b86f3b0e2818631d5931eed63fe9
-      .then(resolve => setDatos(resolve))
-      .catch(err=> console.log.log(err))
-  }, []);
-  return(
-    <ItemList items={datos}/>
-  );
-  
- /*const onAdd = (count) => {
-    alert("Seleccionaste " + count +" items");
+  useEffect(()=>{
+    if (idCategory) {
+      customFetch(2000, products.filter(item => item.category === parseInt(idCategory)))
+        .then(resolve=> setDatos(resolve))
+        .catch(err=> console.log(err))
+    } else{
+      customFetch(2000, products)
+        .then(resolve => setDatos(resolve))
+        .catch(err=> console.log.log(err))
+    }
+      
+    }, [idCategory]);
+    return(
+      <ItemList items={datos}/>
+    );
   }
-  return (
-    <ItemCount stock ={10} initial={1} onAdd={onAdd}/>
-    
-  );*/
-}
 
 export default ItemListContainer;
