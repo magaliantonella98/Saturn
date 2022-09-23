@@ -23,7 +23,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button className="btn btn-outline-secondary" onClick={increment}>+</button>
                 
             </div>
-            <div classNme="d-grid gap-4 col-6 mx-auto">
+            <div className="d-grid gap-4">
                     <button type= 'button' className="btnAdd btn btn-dark btn=lg" onClick={()=>onAdd(count)}>AGREGAR AL CARRITO</button>
             </div>
         </>
