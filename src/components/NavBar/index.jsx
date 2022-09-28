@@ -23,9 +23,11 @@ const NavBar = () => {
               <li className="nav-item">
               <Link className='text-decoration-none' to=''><p className="nav-link">Contacto</p></Link>
               </li>
+              <span className="nav-link"><CartWidgets/></span>
             </ul>
+            
           </div>
-          <span className="nav-link"><CartWidgets/></span>
+          
         </div>
       </nav>
     </div>
