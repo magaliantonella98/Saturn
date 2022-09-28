@@ -13,12 +13,10 @@ const Cart = () => {
     </div>
     <div className="d-grid gap-4 d-md-flex justify-content-md-end">
       <Link className='text-decoration-none'to='/'><button className='deleteAll btn btn-dark'>SEGUIR COMPRANDO</button></Link>
-      
       <button className='deleteAll btn btn-dark' onClick={ctx.clear}>ELIMINAR TODO</button>
     </div>
-    
     {
-      ctx.cartList.map(items=> 
+      ctx.cartList.map(items=>
       <div className="card">
         <div className="row card-body">
           <div className="col-md-4">
