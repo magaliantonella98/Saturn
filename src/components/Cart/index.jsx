@@ -6,18 +6,27 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const ctx= useContext(CartContext);
+  if (ctx.cartList.length===0){
+    return <div className='d-flex flex-column p-2'>
+      <div>
+        <Link className='text-decoration-none'to='/'><button className='deleteAll btn btn-dark'>SEGUIR COMPRANDO</button></Link>
+      </div>
+      <div className='d-flex justify-content-center'>
+        <p>Carrito vacio</p>
+      </div>  
+    </div>
+  }
   return (
     <>
-    <div className="">
-      <h1>Soy un Carrito</h1>
+    <div className="d-flex justify-content-center">
+      <h1>Resumen de compra</h1>
     </div>
     <div className="d-grid gap-4 d-md-flex justify-content-md-end">
-      <Link className='text-decoration-none'to='/'><button className='deleteAll btn btn-dark'>SEGUIR COMPRANDO</button></Link>
-      <button className='deleteAll btn btn-dark' onClick={ctx.clear}>ELIMINAR TODO</button>
+      <button className='deleteAll btn btn-light' onClick={ctx.clear}>ELIMINAR TODO</button>
     </div>
     {
       ctx.cartList.map(items=>
-      <div className="card">
+      <div className="card col-md-8">
         <div className="row card-body">
           <div className="col-md-4">
             <img src={items.pictureUrl} className="img-fluid rounded-start" alt=""/>
@@ -29,15 +38,18 @@ const Cart = () => {
             </div> 
           </div>
           <div className="col-md-2">
-            <p className="card-text">Items</p>
+            <h5 className="card-text">{items.count} Item</h5>
           </div>
           <div className="col-md-3">
             <button className='deleteAll btn btn-dark' onClick ={()=>ctx.removeItem (items.id)}>Eliminar</button>
           </div>
-      </div>                 
-    </div>)
+        </div>                 
+      </div>)
     }
-    </>
-  );
+  </>
+)
 }
+
+
+
 export default Cart;

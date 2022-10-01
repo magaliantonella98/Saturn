@@ -16,7 +16,7 @@ const CartContextProvider = ({children}) => {
             cartFiltrado.push(producto);
             setCartList(cartFiltrado);
         }else{
-           setCartList([...cartList, product]); 
+            setCartList([...cartList, {...product, count}]); 
         }
         console.log(cartList)
     }
